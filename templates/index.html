@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Student, KLH</p>
+        <br>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Milestones</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>DJANGO</h3>
+                <p>I'm using Django to develop web applications, focusing on its powerful features like the ORM, templating engine, and authentication. Through hands-on projects, I'm learning how to build dynamic systems and integrate databases, while exploring concepts like middleware, class-based views, and REST APIs.</p>
+            </div>
+            <div class="project-card">
+                <h3>ANDROID STUDIO</h3>
+                <p>I'm learning Android Studio to develop mobile applications, focusing on building user-friendly interfaces, handling data with SQLite, and integrating APIs. By creating small apps, I'm exploring Java/Kotlin, UI design, and best practices for performance and usability.</p>
+            </div>
+            <div class="project-card">
+                <h3>MACHINE LEARNING</h3>
+                <p>I'm learning to build machine learning models by experimenting with algorithms like linear regression, decision trees, and neural networks. I focus on data preprocessing, model training, and evaluation techniques using tools like scikit-learn and TensorFlow to make informed predictions and enhance model accuracy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skill-list">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Essential Python Libraries</div>
+        </div>
+    </section>
+
+    <section id="resume" class="resume">
+        <h2>My Resume</h2>
+        <div class="resume-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="year">2023</span>
+            <p>First Year: Learned basic programming languages (C, Python), Data Structures, and Algorithms.</p>
+        </div>
+        <div class="resume-item">
+            <i class="fas fa-laptop-code"></i>
+            <span class="year">2023-2024</span>
+            <p> Web development (HTML, CSS, JavaScript), Introduction to Databases (SQL), and Object-Oriented Programming.</p>
+        </div>
+        <div class="resume-item">
+            <i class="fas fa-cogs"></i>
+            <span class="year">2024(Ongoing)</span>
+            <p> Learning Django for web development, Mobile app development (Android Studio), and Machine Learning basics.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        
+        <!-- Contact details section -->
+        <div class="contact-details">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>your.email@example.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+1 (123) 456-7890</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span>linkedin.com/in/yourprofile</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <span>github.com/yourusername</span>
+            </div>
+        </div>
+
+        <form action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+{% endblock %}
